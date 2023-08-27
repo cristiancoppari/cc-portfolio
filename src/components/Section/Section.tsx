@@ -1,4 +1,5 @@
 import { cn } from "mxcn";
+import { forwardRef } from "react";
 
 // import "./Section.css";
 
@@ -8,12 +9,15 @@ interface SectionProps {
     padding?: boolean;
 }
 
-const Section: React.FC<SectionProps> = ({ children, theme, padding = true }) => {
+const Section = forwardRef<HTMLDivElement, SectionProps>(({ children, theme, padding = true }, ref) => {
     return (
-        <section className={cn("section", theme === "dark" ? "theme-dark" : "", padding ? "padding-x" : "")}>
+        <section ref={ref} className={cn("section", theme === "dark" ? "theme-dark" : "", padding ? "padding-x" : "")}>
             {children}
         </section>
     );
-};
+});
+
+// This is because ESLint error
+Section.displayName = "Section";
 
 export default Section;

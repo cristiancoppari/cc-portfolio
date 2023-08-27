@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import { useScroll, useInView } from "framer-motion";
+
 import Section from "@/components/Section/Section";
 
 // import "./About.css";
@@ -10,8 +13,16 @@ const text = [
 ];
 
 const About = () => {
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    const isInView = useInView(sectionRef, {
+        margin: "0px 0px -1px 0px",
+    });
+
+    console.log(isInView);
+
     return (
-        <Section theme="dark">
+        <Section ref={sectionRef} theme="dark">
             <div className="col-2-wrapper">
                 <h2 className="h2">About</h2>
                 <div className="text-container">

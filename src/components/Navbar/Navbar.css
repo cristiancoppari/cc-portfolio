@@ -1,5 +1,5 @@
 .navbar {
-    @apply fixed right-0 top-0 z-10 flex items-center justify-between;
+    @apply fixed right-0 top-0 z-10 flex items-center justify-between bg-white mix-blend-difference;
 
     ul {
         @apply hidden gap-4 md:flex md:items-center;
