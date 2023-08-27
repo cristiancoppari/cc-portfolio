@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sub components */
+@import "../components/Blocks/Job/JobBlock.css";
+
+/* Components */
+@import "../components/Section/Section.css";
+@import "../components/Hero/Hero.css";
+@import "../components/Navbar/Navbar.css";
+@import "../components/Blocks/Work/Work.css";
+
+/* Sections */
+@import "../components/Sections/About/About.css";
+/* @import "../components/Sections/Contact/Contact.css"; */
+/* @import "../components/Sections/Experience/Experience.css"; */
+
+/* Themes */
+.theme-dark {
+    @apply bg-zinc-900;
+}
+
+.theme-dark :is(h1, h2, h3, h4, h5, h6, p) {
+    @apply text-zinc-100;
+}
+
+/* Typography */
+:where(h1, h2, h3, h4, h5, h6) {
+    @apply text-zinc-900;
+}
+
+:where(p) {
+    @apply text-zinc-700;
+}
+
+/* Main */
+main {
+    @apply bg-zinc-100;
+}
+
+.section-p {
+    @apply p-4;
+}
+
+.padding-x {
+    @apply pl-4 pr-16;
+}

@@ -1,0 +1,11 @@
+.work {
+    @apply border-t pt-4;
+
+    h3 {
+        @apply mb-4 text-3xl font-semibold;
+    }
+
+    img {
+        @apply h-96 object-cover;
+    }
+}

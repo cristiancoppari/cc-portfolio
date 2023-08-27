@@ -1,0 +1,11 @@
+.job-block .title-and-date {
+    @apply mb-2 flex flex-col justify-between text-lg font-semibold;
+}
+
+.job-block .position {
+    @apply font-semibold;
+}
+
+.job-block span {
+    @apply text-sm font-normal;
+}

@@ -1,0 +1,21 @@
+.hero {
+    height: 100dvh;
+
+    @apply flex flex-col justify-between;
+}
+
+.hero h1 {
+    @apply mb-12 text-6xl tracking-tight;
+}
+
+.hero .description {
+    @apply pr-12 text-2xl font-medium;
+}
+
+.hero .content {
+    @apply flex flex-col gap-4;
+}
+
+.hero .freelance {
+    @apply uppercase;
+}
