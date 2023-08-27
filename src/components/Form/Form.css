@@ -13,8 +13,4 @@
     textarea {
         @apply border-b border-zinc-900 bg-transparent;
     }
-
-    label {
-        @apply text-xl font-medium;
-    }
 }

@@ -3,10 +3,10 @@
 
     ul {
         @apply hidden gap-4 md:flex md:items-center;
-    }
 
-    &:where(p, a) {
-        @apply text-lg;
+        li {
+            @apply font-semibold;
+        }
     }
 
     button {

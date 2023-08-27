@@ -4,12 +4,12 @@
     @apply flex flex-col justify-between;
 }
 
-.hero h1 {
-    @apply mb-12 text-6xl tracking-tight;
+.hero .h1 {
+    @apply mb-12 md:mt-16;
 }
 
-.hero .description {
-    @apply pr-12 text-2xl font-medium;
+.hero .h4 {
+    @apply pr-12;
 }
 
 .hero .content {
@@ -17,5 +17,5 @@
 }
 
 .hero .freelance {
-    @apply uppercase;
+    @apply p-0 uppercase;
 }

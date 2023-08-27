@@ -15,12 +15,12 @@ const JobBlock: React.FC<JobBlockProps> = ({ job }) => {
     return (
         <article className="job-block">
             <div className="title-and-date">
-                <h3>{company}</h3>
-                <span>{dates}</span>
+                <h3 className="h3">{company}</h3>
+                <span className="p muted">{dates}</span>
             </div>
 
-            <h4 className="position">{position}</h4>
-            <p className="description">{description}</p>
+            <p className="p position">{position}</p>
+            <p className="p">{description}</p>
         </article>
     );
 };

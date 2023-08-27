@@ -4,11 +4,11 @@ const Hero = () => {
     return (
         <div className="hero section-p">
             <div className="title-and-description">
-                <h1>Front End Developer</h1>
+                <h1 className="h1">Front End Developer</h1>
 
-                <p className="description">
+                <p className="h4">
                     I&apos;m Cristian Coppari, a front end web dev and former SEO specialist who thrives in building
-                    simple, performant and good looking apps.
+                    simple, performant and good looking websites and webapps.
                 </p>
             </div>
 
@@ -17,7 +17,7 @@ const Hero = () => {
                     Currently working at <strong>EGO Design.</strong>
                 </p>
 
-                <p className="freelance">Available for working freelance wordwide!</p>
+                <h2 className="h3 freelance">Available for freelance work wordwide!</h2>
             </div>
         </div>
     );

@@ -9,7 +9,8 @@ const works = [
             "They needed a luxury website to match their brand and services. Based on Estudio Leda's design, I built a custom website with SEO best practices.",
         ],
         image: {
-            main: "/images/maiarc-image-banner.png",
+            sm: "/images/maiarc-image-banner.png",
+            md: "/images/maiarc-image-banner-md.png",
         },
     },
     {
@@ -20,7 +21,8 @@ const works = [
             "Now the client is receiving x2 more leads than before.",
         ],
         image: {
-            main: "/images/alertas-image-banner.png",
+            sm: "/images/alertas-image-banner.png",
+            md: "/images/alertas-image-banner-md.png",
         },
     },
 ];
@@ -29,14 +31,12 @@ const Works = () => {
     return (
         <Section padding={false}>
             <div className="padding-x">
-                <h2 className="title">Works</h2>
+                <h2 className="h2">Works</h2>
             </div>
 
-            <div className="flex flex-col gap-12">
-                {works.map((work) => (
-                    <Work key={work.title} work={work} />
-                ))}
-            </div>
+            {works.map((work) => (
+                <Work key={work.title} work={work} />
+            ))}
         </Section>
     );
 };

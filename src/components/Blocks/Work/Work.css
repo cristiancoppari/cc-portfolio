@@ -1,11 +1,30 @@
 .work {
-    @apply border-t pt-4;
+    @apply border-t-2 border-black py-12;
 
-    h3 {
-        @apply mb-4 text-3xl font-semibold;
+    &:last-child {
+        @apply border-b-2;
     }
 
-    img {
-        @apply h-96 object-cover;
+    @screen md {
+        @apply py-20;
+    }
+
+    h3 {
+        @apply mb-8;
+    }
+
+    .content {
+        @apply self-center;
+    }
+
+    &:nth-child(even) {
+        .content {
+            grid-column: 2/3;
+        }
+
+        picture {
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
     }
 }

@@ -12,11 +12,7 @@
 @import "../components/Navbar/Navbar.css";
 @import "../components/Form/Form.css";
 @import "../components/Buttons/Button.css";
-
-/* Sections */
-@import "../components/Sections/About/About.css";
-/* @import "../components/Sections/Contact/Contact.css"; */
-/* @import "../components/Sections/Experience/Experience.css"; */
+@import "../components/Footer/Footer.css";
 
 /* Themes */
 .theme-dark {
@@ -27,24 +23,97 @@
     @apply text-zinc-100;
 }
 
+/* Structure */
+.col-2-wrapper {
+    @apply grid;
+
+    @screen md {
+        @apply grid-cols-2 gap-24;
+    }
+}
+
 /* Typography */
+.h1 {
+    @apply text-6xl font-semibold tracking-tight;
+    @apply md:text-8xl;
+}
+
+.h2 {
+    @apply text-5xl font-medium tracking-tight;
+
+    @screen md {
+        @apply text-7xl;
+    }
+}
+
+.h3 {
+    @apply text-3xl font-medium;
+
+    @screen md {
+        @apply text-5xl;
+    }
+}
+
+.h4 {
+    @apply text-xl font-medium;
+
+    @screen md {
+        @apply w-2/3 text-4xl font-light;
+    }
+}
+
+.h6 {
+    @apply text-xl font-medium;
+
+    @screen md {
+        @apply text-3xl;
+    }
+}
+
 :where(h1, h2, h3, h4, h5, h6) {
     @apply text-zinc-900;
 }
 
-:where(p) {
-    @apply text-zinc-700;
+:where(p, .p) {
+    @apply text-lg text-zinc-700;
+
+    @screen md {
+        @apply text-xl;
+    }
 }
 
-/* Main */
-main {
+:where(.muted) {
+    @apply text-zinc-500;
+}
+
+body {
     @apply bg-zinc-100;
+}
+
+.container {
+    @apply mx-auto;
+
+    @screen lg {
+        @apply max-w-screen-lg;
+    }
+
+    @screen xl {
+        @apply max-w-screen-xl;
+    }
 }
 
 .section-p {
     @apply p-4;
+
+    @screen md {
+        @apply p-8;
+    }
 }
 
 .padding-x {
     @apply pl-4 pr-16;
+
+    @screen md {
+        @apply pl-8 pr-8;
+    }
 }

@@ -14,7 +14,7 @@ const Navbar = () => {
             <button>Menu</button>
             <ul>
                 {nav_links.map((link) => (
-                    <li key={link.name}>
+                    <li key={link.name} className="p">
                         <Link href={link.path}>{link.name}</Link>
                     </li>
                 ))}

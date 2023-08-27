@@ -2,19 +2,27 @@
 .section {
     @apply relative py-12;
 
+    @screen md {
+        @apply py-24;
+    }
+
+    @screen lg {
+        @apply py-32;
+    }
+
+    @screen xl {
+        @apply py-40;
+    }
+
     .text-container {
         @apply flex flex-col gap-6;
     }
 
-    .title {
-        @apply mb-8 text-5xl font-medium tracking-tight;
+    .h2 {
+        @apply mb-8;
     }
 
-    .subtitle {
-        @apply mb-8 text-3xl font-medium;
-    }
-
-    p {
-        @apply text-lg;
+    .h6 {
+        @apply mb-4;
     }
 }
