@@ -4,12 +4,14 @@
 
 /* Sub components */
 @import "../components/Blocks/Job/JobBlock.css";
+@import "../components/Blocks/Work/Work.css";
 
 /* Components */
 @import "../components/Section/Section.css";
 @import "../components/Hero/Hero.css";
 @import "../components/Navbar/Navbar.css";
-@import "../components/Blocks/Work/Work.css";
+@import "../components/Form/Form.css";
+@import "../components/Buttons/Button.css";
 
 /* Sections */
 @import "../components/Sections/About/About.css";

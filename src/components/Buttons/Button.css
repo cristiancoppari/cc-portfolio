@@ -1,0 +1,5 @@
+.button {
+    &[type="submit"] {
+        @apply bg-zinc-900 px-8 py-4 uppercase text-zinc-100;
+    }
+}

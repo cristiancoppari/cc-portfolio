@@ -1,16 +1,20 @@
 /* Section */
 .section {
     @apply relative py-12;
-}
 
-.section .text-container {
-    @apply flex flex-col gap-6;
-}
+    .text-container {
+        @apply flex flex-col gap-6;
+    }
 
-.section .title {
-    @apply mb-8 text-5xl font-medium tracking-tight;
-}
+    .title {
+        @apply mb-8 text-5xl font-medium tracking-tight;
+    }
 
-.section p {
-    @apply text-lg;
+    .subtitle {
+        @apply mb-8 text-3xl font-medium;
+    }
+
+    p {
+        @apply text-lg;
+    }
 }

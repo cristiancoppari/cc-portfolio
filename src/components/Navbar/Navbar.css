@@ -1,15 +1,15 @@
 .navbar {
-    @apply fixed right-0 top-0 flex items-center justify-between;
-}
+    @apply fixed right-0 top-0 z-10 flex items-center justify-between;
 
-.navbar ul {
-    @apply hidden gap-4 md:flex md:items-center;
-}
+    ul {
+        @apply hidden gap-4 md:flex md:items-center;
+    }
 
-.navbar :where(p, a) {
-    @apply text-lg;
-}
+    &:where(p, a) {
+        @apply text-lg;
+    }
 
-.navbar button {
-    @apply ml-auto block font-semibold text-[#ff7f59] md:hidden;
+    button {
+        @apply ml-auto block font-semibold text-[#ff7f59] md:hidden;
+    }
 }
