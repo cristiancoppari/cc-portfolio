@@ -1,0 +1,5 @@
+.works-container {
+    @screen md {
+        grid-column: 1/3;
+    }
+}

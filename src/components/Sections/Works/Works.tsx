@@ -29,14 +29,12 @@ const works = [
 
 const Works = () => {
     return (
-        <Section padding={false}>
-            <div className="padding-x">
-                <h2 className="h2">Works</h2>
+        <Section title="Works">
+            <div className="works-container">
+                {works.map((work) => (
+                    <Work key={work.title} work={work} />
+                ))}
             </div>
-
-            {works.map((work) => (
-                <Work key={work.title} work={work} />
-            ))}
         </Section>
     );
 };
