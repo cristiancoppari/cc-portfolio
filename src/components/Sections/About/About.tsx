@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { useScroll, useInView } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 import Section from "@/components/Section/Section";
 

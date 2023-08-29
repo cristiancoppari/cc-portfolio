@@ -1,23 +1,59 @@
-// import "./Hero.css";
+import { motion } from "framer-motion";
 
-const Hero = () => {
+const hero_variants = {
+    hidden: {
+        opacity: 0,
+        y: -50,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+        },
+    },
+};
+
+const containerVariants = {
+    hidden: {
+        opacity: 1, // We want the container to be visible, but children will be hidden
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            // delayChildren: 0.2, // Delay before child animations start
+            staggerChildren: 0.5, // Time between each child starting its animation
+        },
+    },
+};
+
+const title = "Front End Developer";
+const paragraph = `I'm Cristian Coppari, a front end web dev and former SEO specialist who thrives in building simple, performant and good looking websites and webapps.`;
+
+const Hero: React.FC = () => {
     return (
         <div className="hero section-p">
-            <div className="title-and-description">
-                <h1 className="h1">Front End Developer</h1>
+            <motion.div
+                className="title-and-description"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+            >
+                <motion.div variants={hero_variants}>
+                    <h1 className="h1">{title}</h1>
+                </motion.div>
 
-                <p className="h4">
-                    I&apos;m Cristian Coppari, a front end web dev and former SEO specialist who thrives in building
-                    simple, performant and good looking websites and webapps.
-                </p>
-            </div>
+                <motion.p variants={hero_variants} className="h4">
+                    {paragraph}
+                </motion.p>
+            </motion.div>
 
             <div className="content">
                 <p className="location">
                     Currently working at <strong>EGO Design.</strong>
                 </p>
 
-                <h2 className="h3 freelance">Available for freelance work wordwide!</h2>
+                <h2 className="h3 freelance">Available for freelance work worldwide!</h2>
             </div>
         </div>
     );
