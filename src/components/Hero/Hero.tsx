@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 const hero_variants = {
     hidden: {
@@ -31,6 +31,12 @@ const title = "Front End Developer";
 const paragraph = `I'm Cristian Coppari, a front end web dev and former SEO specialist who thrives in building simple, performant and good looking websites and webapps.`;
 
 const Hero: React.FC = () => {
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        console.log("Page scroll: ", latest);
+    });
+
     return (
         <div className="hero section-p">
             <motion.div
@@ -53,7 +59,7 @@ const Hero: React.FC = () => {
                     Currently working at <strong>EGO Design.</strong>
                 </p>
 
-                <h2 className="h3 freelance">Available for freelance work worldwide!</h2>
+                <motion.h2 className="h3 freelance">Available for freelance work worldwide!</motion.h2>
             </div>
         </div>
     );

@@ -34,15 +34,11 @@ const jobs = [
 
 const Experience = () => {
     return (
-        <Section>
-            <div className="col-2-wrapper">
-                <h2 className="h2">Experience</h2>
-
-                <div className="flex flex-col gap-12 md:gap-24">
-                    {jobs.map((job, index) => (
-                        <JobBlock key={index} job={job} />
-                    ))}
-                </div>
+        <Section title="Experience" stickyTitle>
+            <div className="flex flex-col gap-12 md:gap-24">
+                {jobs.map((job, index) => (
+                    <JobBlock key={index} job={job} />
+                ))}
             </div>
         </Section>
     );
