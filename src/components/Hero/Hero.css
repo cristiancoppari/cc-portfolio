@@ -8,6 +8,10 @@
     @apply mb-12 md:mt-16;
 }
 
+.hero .h3 {
+    @apply whitespace-nowrap;
+}
+
 .hero .h4 {
     @apply pr-12;
 }

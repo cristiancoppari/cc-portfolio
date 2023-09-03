@@ -1,4 +1,5 @@
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useMediaQuery } from "usehooks-ts";
 
 const hero_variants = {
     hidden: {
@@ -27,15 +28,25 @@ const containerVariants = {
     },
 };
 
-const title = "Front End Developer";
-const paragraph = `I'm Cristian Coppari, a front end web dev and former SEO specialist who thrives in building simple, performant and good looking websites and webapps.`;
+const ranges = {
+    mobile: {
+        init: [0, 1],
+        end: [100, -3500],
+    },
+    desktop: {
+        init: [0, 1],
+        end: [1000, -4500],
+    },
+};
 
 const Hero: React.FC = () => {
-    const { scrollY } = useScroll();
+    const isMobile = useMediaQuery("(max-width: 768px)");
+    const { scrollYProgress } = useScroll();
 
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        console.log("Page scroll: ", latest);
-    });
+    const deviceType = isMobile ? "mobile" : "desktop";
+    const { init, end } = ranges[deviceType];
+
+    const x = useTransform(scrollYProgress, init, end);
 
     return (
         <div className="hero section-p">
@@ -46,20 +57,22 @@ const Hero: React.FC = () => {
                 animate="visible"
             >
                 <motion.div variants={hero_variants}>
-                    <h1 className="h1">{title}</h1>
+                    <h1 className="h1">Front End Developer</h1>
                 </motion.div>
 
                 <motion.p variants={hero_variants} className="h4">
-                    {paragraph}
+                    {`I'm Cristian Coppari, a front end web dev and former SEO specialist who thrives in building simple, performant and good looking websites and webapps.`}
                 </motion.p>
             </motion.div>
 
             <div className="content">
                 <p className="location">
-                    Currently working at <strong>EGO Design.</strong>
+                    9 - 5 @ <strong>EGO Design.</strong>
                 </p>
 
-                <motion.h2 className="h3 freelance">Available for freelance work worldwide!</motion.h2>
+                <motion.h2 className="h3 freelance" style={{ x: x }}>
+                    Available for freelance work worldwide!
+                </motion.h2>
             </div>
         </div>
     );
