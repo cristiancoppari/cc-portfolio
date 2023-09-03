@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useMediaQuery } from "usehooks-ts";
 
 import Section from "@/components/Section/Section";
 import Form from "@/components/Form/Form";
@@ -21,13 +22,31 @@ const text_variants = {
 };
 
 const Contact = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const ref = useRef<HTMLDivElement>(null);
+
+    const isMobile = useMediaQuery("(max-width: 768px)");
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+    const stagger_text_variants = {
+        hidden: {
+            opacity: 0,
+            y: 100,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                damping: 30,
+                staggerChildren: isMobile ? 0.4 : 0.2,
+            },
+        },
+    };
 
     return (
         <Section title="Contact">
             <div ref={ref}>
-                <motion.div variants={text_variants} initial="hidden" animate={isInView ? "visible" : ""}>
+                <motion.div variants={stagger_text_variants} initial="hidden" animate={isInView ? "visible" : ""}>
                     <motion.h3 variants={text_variants} className="h6">
                         Let&apos;s talk about your next project.
                     </motion.h3>
