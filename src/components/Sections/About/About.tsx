@@ -1,4 +1,6 @@
-import { type Variants, motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useMediaQuery } from "usehooks-ts";
 
 import Section from "@/components/Section/Section";
 
@@ -9,41 +11,39 @@ const text = [
     "Since then I've been coding. My languages of choice are JavaScript and TypeScript. I feel comfortable working with plain HTML, CSS and JavaScript, but I also have experience with React, Next.js and Django. So as Bootstrap and Tailwind CSS.",
 ];
 
-const container_variants = {
-    hidden: {
-        opacity: 1, // We want the container to be visible, but children will be hidden
-    },
-    visible: {
-        opacity: 1,
-        transition: {
-            type: "spring",
-            delayChildren: 1,
-            staggerChildren: 0.2,
-            when: "beforeChildren",
-        },
-    },
-};
-
-const text_variants: Variants = {
-    hidden: {
-        opacity: 0,
-        y: -50,
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: "spring",
-        },
-    },
-};
-
 const About = () => {
+    const ref = useRef<HTMLDivElement>(null);
+
+    const isMobile = useMediaQuery("(max-width: 768px)");
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+    const stagger_text_variants = {
+        hidden: {
+            opacity: 0,
+            y: 100,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                damping: 30,
+                staggerChildren: isMobile ? 0.4 : 0.2,
+            },
+        },
+    };
+
     return (
         <Section theme="dark" title="About">
-            <motion.div className="text-container" variants={container_variants} initial="hidden" animate="visible">
+            <motion.div
+                ref={ref}
+                variants={stagger_text_variants}
+                initial={"hidden"}
+                animate={isInView ? "visible" : ""}
+                className="text-container"
+            >
                 {text.map((t) => (
-                    <motion.p key={t} className="text" variants={text_variants}>
+                    <motion.p variants={stagger_text_variants} key={t} className="text">
                         {t}
                     </motion.p>
                 ))}
