@@ -2,6 +2,12 @@
     height: 100dvh;
 
     @apply flex flex-col justify-between;
+
+    .location {
+        @screen xl {
+            @apply text-5xl;
+        }
+    }
 }
 
 .hero .h1 {

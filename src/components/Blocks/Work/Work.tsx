@@ -1,12 +1,19 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+interface TeamMember {
+    name: string;
+    role: string;
+}
+
 interface Work {
     title: string;
     description: string[];
-    image: {
-        sm: string;
-        md: string;
+    details: {
+        product: string;
+        year: number;
+        team_members: TeamMember[];
+        tech: string[];
     };
 }
 
@@ -30,7 +37,7 @@ const work_variants = {
 };
 
 const Work: React.FC<WorkProps> = ({ work }) => {
-    const { title, description, image } = work;
+    const { title, description, details } = work;
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -54,10 +61,32 @@ const Work: React.FC<WorkProps> = ({ work }) => {
                     </div>
                 </div>
 
-                <picture>
-                    <source srcSet={`${image.md}`} media="(min-width: 768px)" />
-                    <img src={image.sm} alt="" />
-                </picture>
+                <div className="details padding-x">
+                    <div className="label">
+                        <p>{details.product}</p>
+                    </div>
+                    <div className="team">
+                        <h4>Team</h4>
+
+                        <ul>
+                            {details.team_members.map((member) => (
+                                <li key={member.name}>
+                                    {member.name} - <strong>{member.role}</strong>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className="tech">
+                        <h4>Tech</h4>
+
+                        <ul>
+                            {details.tech.map((tech) => (
+                                <li key={tech}>{tech}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </motion.article>
     );

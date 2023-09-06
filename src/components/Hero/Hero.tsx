@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
                 </motion.div>
 
                 <motion.p variants={hero_variants} className="h4">
-                    {`I'm Cristian Coppari, a front end web dev and former SEO specialist who thrives in building simple, performant and good looking websites and webapps.`}
+                    {`I'm Cristian Coppari, a front end web dev and former SEO specialist who center divs for a living. Sometimes they are centered.`}
                 </motion.p>
             </motion.div>
 

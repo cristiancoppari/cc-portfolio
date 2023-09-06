@@ -17,14 +17,38 @@
         @apply self-center;
     }
 
-    &:nth-child(even) {
+    /* &:nth-child(even) {
         .content {
             grid-column: 2/3;
         }
 
-        picture {
+        .details {
             grid-column: 1/2;
             grid-row: 1/2;
+        }
+    } */
+
+    .details {
+        @apply mt-12 flex flex-col flex-wrap;
+
+        @screen md {
+            @apply mt-0 flex-row gap-x-12 gap-y-6;
+        }
+
+        .label {
+            @apply flex-[1_1_100%];
+
+            p {
+                @apply inline-block bg-black px-4 py-2 uppercase text-zinc-100;
+            }
+        }
+
+        h4 {
+            @apply mb-2 font-bold;
+        }
+
+        ul {
+            @apply flex flex-col gap-1;
         }
     }
 }
