@@ -36,10 +36,18 @@
         }
 
         .label {
-            @apply flex-[1_1_100%];
+            @apply mb-4 flex-[1_1_100%];
+
+            @screen md {
+                @apply mb-0;
+            }
 
             p {
-                @apply inline-block bg-black px-4 py-2 uppercase text-zinc-100;
+                @apply inline-block bg-black px-4 py-2 text-sm uppercase text-zinc-100;
+
+                @screen md {
+                    @apply text-base;
+                }
             }
         }
 

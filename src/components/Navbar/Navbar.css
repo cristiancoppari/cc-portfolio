@@ -10,6 +10,6 @@
     }
 
     button {
-        @apply ml-auto block font-semibold text-[#ff7f59] md:hidden;
+        @apply ml-auto block font-semibold md:hidden;
     }
 }

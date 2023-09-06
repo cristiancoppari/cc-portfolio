@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "/node_modules/locomotive-scroll/dist/locomotive-scroll.css";
+
 /* Sub components */
 @import "../components/Blocks/Job/JobBlock.css";
 @import "../components/Blocks/Work/Work.css";
@@ -84,9 +86,13 @@
 }
 
 :where(p, .p) {
-    @apply text-lg text-zinc-700;
+    @apply text-zinc-700;
 
-    @screen md {
+    @screen lg {
+        @apply text-lg;
+    }
+
+    @screen xl {
         @apply text-xl;
     }
 }
