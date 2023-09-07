@@ -57,12 +57,10 @@ const Hero: React.FC = () => {
                 animate="visible"
             >
                 <motion.div variants={hero_variants}>
-                    <h1 className="h1" data-scroll data-scroll-speed="0.2">
-                        Front End Developer
-                    </h1>
+                    <h1 className="h1">Front End Developer</h1>
                 </motion.div>
 
-                <motion.p variants={hero_variants} className="h4" data-scroll data-scroll-speed="0.3">
+                <motion.p variants={hero_variants} className="h4">
                     {`I'm Cristian Coppari, a front end web dev and former SEO specialist who center divs for a living. Sometimes they are centered.`}
                 </motion.p>
             </motion.div>

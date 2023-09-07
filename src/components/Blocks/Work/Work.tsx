@@ -51,7 +51,7 @@ const Work: React.FC<WorkProps> = ({ work }) => {
             animate={isInView ? "visible" : ""}
         >
             <div className="col-2-wrapper">
-                <div className="content padding-x">
+                <div className="content">
                     <h3 className="h3">{title}</h3>
 
                     <div className="space-y-2">
@@ -61,7 +61,7 @@ const Work: React.FC<WorkProps> = ({ work }) => {
                     </div>
                 </div>
 
-                <div className="details padding-x">
+                <div className="details">
                     <div className="label">
                         <p>{details.product}</p>
                     </div>

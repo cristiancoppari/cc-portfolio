@@ -1,11 +1,23 @@
 .navbar {
     @apply fixed right-0 top-0 z-10 flex items-center justify-between bg-white mix-blend-difference backdrop-blur-md;
 
-    ul {
+    &-desktop {
         @apply hidden gap-4 md:flex md:items-center;
 
         li {
             @apply font-semibold;
+        }
+    }
+
+    &-mobile {
+        @apply fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black text-zinc-100 md:hidden;
+
+        button {
+            @apply absolute right-12 top-8 text-5xl;
+        }
+
+        ul {
+            @apply flex flex-col items-center justify-center gap-12;
         }
     }
 
