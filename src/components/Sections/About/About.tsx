@@ -5,7 +5,7 @@ import { useMediaQuery } from "usehooks-ts";
 import Section from "@/components/Section/Section";
 
 const text = [
-    "33 years old, based in Buenos Aires, Argentina.",
+    "34 years old, based in Buenos Aires, Argentina.",
     "I have a university degree in Marketing and Advertising specializing in SEO.",
     "In 2019 I started to learn JavaScript to automate some SEO tasks. I realized that I enjoyed building things instead of just optimizing them.",
     "Since then I've been coding. My languages of choice are JavaScript and TypeScript. I feel comfortable working with plain HTML, CSS and JavaScript, but I also have experience with React, Next.js and Django. So as Bootstrap and Tailwind CSS.",

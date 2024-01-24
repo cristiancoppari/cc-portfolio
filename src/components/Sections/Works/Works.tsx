@@ -3,6 +3,26 @@ import Work from "@/components/Blocks/Work/Work";
 
 const works = [
     {
+        title: "Easy Pagos",
+        description: [
+            "Easy Pagos is a new digital wallet in Argentina.",
+            "They are lauching their product so they need a new website.",
+            "Built with Astro and Tailwind CSS, and SEO best practices to rank better on Google.",
+        ],
+        details: {
+            product: "Static website",
+            year: 2023,
+            team_members: [
+                {
+                    name: "Cristian C. (who writes)",
+                    role: "Developer",
+                },
+            ],
+            tech: ["Astro.js", "Tailwind CSS"],
+        },
+        link: "https://easypagos.com.ar",
+    },
+    {
         title: "STRITFUD",
         description: [
             "STRITFUD is a italian food restaurant and focacceria in Málaga, Spain.",
@@ -20,6 +40,7 @@ const works = [
             ],
             tech: ["Next.js", "Tailwind CSS", "Google Analytics"],
         },
+        link: "https://stritfud.es",
     },
     {
         title: "MAIARC Concierge",
@@ -42,6 +63,7 @@ const works = [
             ],
             tech: ["Next.js", "Tailwind CSS", "Strapi"],
         },
+        link: "https://www.maiarconcierge.com/",
     },
     {
         title: "Alertas Seguridad Privada",
@@ -65,6 +87,7 @@ const works = [
             ],
             tech: ["Next.js", "Tailwind CSS"],
         },
+        link: "https://alertaseguridadprivada.com.ar/",
     },
     {
         title: "The Best Drivers",
@@ -85,6 +108,7 @@ const works = [
             ],
             tech: ["Google Tag Manager", "Google Ads", "Google Analytics"],
         },
+        link: "https://bestdrivers.com.ar/",
     },
 ];
 

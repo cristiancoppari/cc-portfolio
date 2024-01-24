@@ -10,4 +10,16 @@
     .position {
         @apply mb-4 font-bold;
     }
+
+    .main-projects {
+        @apply mt-8;
+
+        ul {
+            @apply ml-8 list-disc;
+
+            li {
+                @apply mb-2 pl-2 text-base;
+            }
+        }
+    }
 }

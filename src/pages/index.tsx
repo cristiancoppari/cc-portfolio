@@ -2,12 +2,12 @@ import type LocomotiveScroll from "locomotive-scroll";
 
 import { useEffect } from "react";
 
-import Navbar from "@/components/Navbar/Navbar";
+// import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
 import About from "@/components/Sections/About/About";
 import Experience from "@/components/Sections/Experience/Experience";
 import Works from "@/components/Sections/Works/Works";
-import Contact from "@/components/Sections/Contact/Contact";
+// import Contact from "@/components/Sections/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
@@ -17,11 +17,7 @@ export default function Home() {
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
         (async () => {
             const LocomotiveScroll = (await import("locomotive-scroll")).default;
-            scroll = new LocomotiveScroll({
-                lenisOptions: {
-                    smoothTouch: true,
-                },
-            });
+            scroll = new LocomotiveScroll();
         })();
 
         return () => {
@@ -31,12 +27,12 @@ export default function Home() {
 
     return (
         <div className="overflow-hidden">
-            <Navbar />
+            {/* <Navbar /> */}
             <Hero />
             <About />
             <Experience />
             <Works />
-            <Contact />
+            {/* <Contact /> */}
             <Footer />
         </div>
     );

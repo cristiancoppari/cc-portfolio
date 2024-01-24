@@ -7,6 +7,7 @@ interface JobBlockProps {
         position: string;
         description: string;
         dates: string;
+        mainProjects: string[];
     };
 }
 
@@ -46,6 +47,17 @@ const JobBlock: React.FC<JobBlockProps> = ({ job }) => {
 
             <p className="p position">{position}</p>
             <p className="p">{description}</p>
+
+            <div className="main-projects">
+                <p className="p position">Main projects</p>
+                <ul className="">
+                    {job.mainProjects.map((project) => (
+                        <li key={project} className="p">
+                            {project}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </motion.article>
     );
 };

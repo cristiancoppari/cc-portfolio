@@ -15,6 +15,7 @@ interface Work {
         team_members: TeamMember[];
         tech: string[];
     };
+    link: string;
 }
 
 interface WorkProps {
@@ -52,7 +53,9 @@ const Work: React.FC<WorkProps> = ({ work }) => {
         >
             <div className="col-2-wrapper">
                 <div className="content">
-                    <h3 className="h3">{title}</h3>
+                    <a href={work.link}>
+                        <h3 className="h3">{title}</h3>
+                    </a>
 
                     <div className="space-y-2">
                         {description.map((paragraph) => (
